@@ -1,4 +1,4 @@
-package com.ong.model;
+package com.plataformaapoio.instituicao.model;
 
 import jakarta.persistence.*;
 

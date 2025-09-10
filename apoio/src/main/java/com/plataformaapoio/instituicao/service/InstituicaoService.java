@@ -1,9 +1,10 @@
-package com.ong.service;
+package com.plataformaapoio.instituicao.service;
 
-import com.ong.model.Instituicao;
-import com.ong.repository.InstituicaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.plataformaapoio.instituicao.model.Instituicao;
+import com.plataformaapoio.instituicao.repository.InstituicaoRepository;
 
 import java.util.List;
 import java.util.Optional;

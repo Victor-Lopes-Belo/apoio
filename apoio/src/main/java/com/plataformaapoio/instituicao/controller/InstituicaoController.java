@@ -1,10 +1,12 @@
-package com.ong.controller;
+package com.plataformaapoio.instituicao.controller;
 
-import com.ong.model.Instituicao;
-import com.ong.service.InstituicaoService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import com.plataformaapoio.instituicao.model.Instituicao;
+import com.plataformaapoio.instituicao.service.InstituicaoService;
 
 import java.util.List;
 
