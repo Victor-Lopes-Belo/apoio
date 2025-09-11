@@ -15,7 +15,9 @@ public class Instituicao {
     private String contato;
     private String responsavel;
 
-    public Instituicao() {}
+    public Instituicao() {
+        
+    }
 
     public Instituicao(String nome, String endereco, String contato, String responsavel) {
         this.nome = nome;
@@ -24,18 +26,43 @@ public class Instituicao {
         this.responsavel = responsavel;
     }
 
-    public Integer getId() { return id; }
-    public void setId(Integer id) { this.id = id; }
+    public Integer getId() { 
+        return id; 
+    }
 
-    public String getNome() { return nome; }
-    public void setNome(String nome) { this.nome = nome; }
+    public void setId(Integer id) { 
+        this.id = id; 
+    }
 
-    public String getEndereco() { return endereco; }
-    public void setEndereco(String endereco) { this.endereco = endereco; }
+    public String getNome() { 
+        return nome; 
+    }
 
-    public String getContato() { return contato; }
-    public void setContato(String contato) { this.contato = contato; }
+    public void setNome(String nome) { 
+        this.nome = nome; 
+    }
 
-    public String getResponsavel() { return responsavel; }
-    public void setResponsavel(String responsavel) { this.responsavel = responsavel; }
+    public String getEndereco() { 
+        return endereco; 
+    }
+
+    public void setEndereco(String endereco) { 
+        this.endereco = endereco; 
+    }
+
+    public String getContato() { 
+        return contato; 
+    }
+
+    public void setContato(String contato) { 
+        this.contato = contato; 
+    }
+
+    public String getResponsavel() { 
+        return responsavel; 
+    }
+
+    public void setResponsavel(String responsavel) { 
+        this.responsavel = responsavel; 
+    }
 }
