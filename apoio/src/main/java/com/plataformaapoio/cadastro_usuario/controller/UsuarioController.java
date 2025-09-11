@@ -1,13 +1,14 @@
-package com.plataformaapoiocriancas.cadastro_usuario.controller;
+package com.plataformaapoio.cadastro_usuario.controller;
 
-import com.plataformaapoiocriancas.cadastro_usuario.business.UsuarioServices;
-import com.plataformaapoiocriancas.cadastro_usuario.infrastructure.entitys.Usuario;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.plataformaapoio.cadastro_usuario.model.Usuario;
+import com.plataformaapoio.cadastro_usuario.services.UsuarioServices;
+
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("api/usuario")
 @RequiredArgsConstructor
 public class UsuarioController {
     private final UsuarioServices usuarioServices;

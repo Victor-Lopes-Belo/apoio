@@ -1,8 +1,9 @@
-package com.plataformaapoiocriancas.cadastro_usuario.business;
+package com.plataformaapoio.cadastro_usuario.services;
 
-import com.plataformaapoiocriancas.cadastro_usuario.infrastructure.entitys.Usuario;
-import com.plataformaapoiocriancas.cadastro_usuario.infrastructure.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
+
+import com.plataformaapoio.cadastro_usuario.model.Usuario;
+import com.plataformaapoio.cadastro_usuario.repository.UsuarioRepository;
 
 @Service
 public class UsuarioServices {

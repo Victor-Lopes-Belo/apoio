@@ -1,6 +1,5 @@
-package com.plataformaapoiocriancas.cadastro_usuario.infrastructure.entitys;
+package com.plataformaapoio.cadastro_usuario.model;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
