@@ -1,6 +1,9 @@
 package com.plataformaapoio.crianca.model;
 
+import com.plataformaapoio.instituicao.model.Instituicao; // Importe a classe Instituicao
 import jakarta.persistence.*;
+
+@Entity
 public class Crianca {
 
     @Id
@@ -8,19 +11,21 @@ public class Crianca {
     private Long id;
 
     private String nome;
+    private Long idade;
 
-    private Integer idade;
-
+    // --- CORREÇÃO APLICADA AQUI ---
     @ManyToOne
-    @JoinColumn(name = "crianca_id", nullable = false)
-    private Crianca crianca;
+    @JoinColumn(name = "instituicao_id", nullable = false) // Coluna de junção correta
+    private Instituicao instituicao; // Relacionamento correto
 
-    public Crianca() {}
+    public Crianca() {
+    }
 
-    public Crianca(String nome, Integer idade, Crianca crianca) {
+    // Construtor atualizado
+    public Crianca(String nome, Long idade, Instituicao instituicao) {
         this.nome = nome;
         this.idade = idade;
-        this.crianca = crianca;
+        this.instituicao = instituicao;
     }
 
     // Getters e Setters
@@ -40,19 +45,20 @@ public class Crianca {
         this.nome = nome;
     }
 
-    public Integer getIdade() {
+    public Long getIdade() {
         return idade;
     }
 
-    public void setIdade(Integer idade) {
+    public void setIdade(Long idade) {
         this.idade = idade;
     }
 
-    public Crianca getCrianca() {
-        return crianca;
+    // Getter e Setter atualizados
+    public Instituicao getInstituicao() {
+        return instituicao;
     }
 
-    public void setCrianca(Crianca crianca) {
-        this.crianca = crianca;
+    public void setInstituicao(Instituicao instituicao) {
+        this.instituicao = instituicao;
     }
 }
