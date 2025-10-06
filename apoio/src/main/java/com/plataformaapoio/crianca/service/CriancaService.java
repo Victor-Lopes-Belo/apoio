@@ -2,6 +2,8 @@ package com.plataformaapoio.crianca.service;
 
 import com.plataformaapoio.crianca.model.Crianca;
 import com.plataformaapoio.crianca.repository.CriancaRepository;
+import com.plataformaapoio.instituicao.model.Instituicao; // <-- MUDANÇA: Importar Instituicao
+import com.plataformaapoio.instituicao.repository.InstituicaoRepository; // <-- MUDANÇA: Importar InstituicaoRepository
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,17 +13,17 @@ import java.util.Optional;
 public class CriancaService {
 
     private final CriancaRepository criancaRepository;
-    private final CriancaRepository instituicaoRepository;
+    private final InstituicaoRepository instituicaoRepository; // <-- MUDANÇA: Tipo corrigido
 
-    public CriancaService(CriancaRepository criancaRepository, CriancaRepository instituicaoRepository) {
+    public CriancaService(CriancaRepository criancaRepository, InstituicaoRepository instituicaoRepository) {
         this.criancaRepository = criancaRepository;
         this.instituicaoRepository = instituicaoRepository;
     }
 
     public Crianca salvar(Long instituicaoId, Crianca crianca) {
-        Crianca instituicao = instituicaoRepository.findById(instituicaoId)
+        Instituicao instituicao = instituicaoRepository.findById(instituicaoId)
                 .orElseThrow(() -> new RuntimeException("Instituição não encontrada"));
-        crianca.setCrianca(instituicao);
+        crianca.setInstituicao(instituicao); // Usa o setter correto
         return criancaRepository.save(crianca);
     }
 
@@ -30,7 +32,7 @@ public class CriancaService {
     }
 
     public List<Crianca> listarPorInstituicao(Long instituicaoId) {
-        return criancaRepository.findByInstituicaoId(instituicaoId);
+        return criancaRepository.findByInstituicao_Id(instituicaoId);
     }
 
     public Optional<Crianca> buscarPorId(Long id) {
@@ -41,6 +43,7 @@ public class CriancaService {
         return criancaRepository.findById(id).map(crianca -> {
             crianca.setNome(criancaAtualizada.getNome());
             crianca.setIdade(criancaAtualizada.getIdade());
+
             return criancaRepository.save(crianca);
         }).orElseThrow(() -> new RuntimeException("Criança não encontrada"));
     }
