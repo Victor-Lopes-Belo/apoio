@@ -1,4 +1,4 @@
-package com.ong.model;
+package com.plataformaapoio.ong.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;

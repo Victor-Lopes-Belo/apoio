@@ -1,4 +1,4 @@
-package com.ong.dao;
+package com.plataformaapoio.ong.dao;
 
 public class InstituicaoDAO {
     

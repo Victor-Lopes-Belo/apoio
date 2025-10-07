@@ -1,8 +1,9 @@
-package com.ong.service;
+package com.plataformaapoio.ong.service;
 
-import com.ong.model.Doacao;
-import com.ong.repository.DoacaoRepository;
 import org.springframework.stereotype.Service;
+
+import com.plataformaapoio.ong.model.Doacao;
+import com.plataformaapoio.ong.repository.DoacaoRepository;
 
 import java.util.List;
 

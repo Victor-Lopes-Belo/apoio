@@ -1,9 +1,10 @@
-package com.ong.controller;
+package com.plataformaapoio.ong.controller;
 
-import com.ong.model.Doacao;
-import com.ong.service.DoacaoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import com.plataformaapoio.ong.model.Doacao;
+import com.plataformaapoio.ong.service.DoacaoService;
 
 import java.util.List;
 
