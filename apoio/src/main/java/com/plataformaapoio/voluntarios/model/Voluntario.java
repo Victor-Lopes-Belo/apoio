@@ -1,4 +1,4 @@
-package com.Voluntarios.model;
+package com.plataformaapoio.voluntarios.model;
 
 import jakarta.persistence.*;
 
