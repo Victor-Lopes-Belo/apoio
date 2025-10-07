@@ -23,4 +23,23 @@ public class DoacaoService {
     public List<Doacao> listar() {
         return repository.findAll();
     }
+
+    public java.util.Optional<Doacao> buscarPorId(Long id) {
+        return repository.findById(id);
+    }
+
+    public Doacao atualizar(Long id, Doacao doacao) {
+        if (!repository.existsById(id)) {
+            throw new RuntimeException("Doação não encontrada");
+        }
+        doacao.setId(id);
+        return repository.save(doacao);
+    }
+
+    public void deletar(Long id) {
+        if (!repository.existsById(id)) {
+            throw new RuntimeException("Doação não encontrada");
+        }
+        repository.deleteById(id);
+    }
 }
