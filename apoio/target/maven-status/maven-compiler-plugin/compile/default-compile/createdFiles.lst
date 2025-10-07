@@ -1,0 +1,5 @@
+com\plataformaapoio\ApoioApplication.class
+com\plataformaapoio\instituicao\model\Instituicao.class
+com\plataformaapoio\instituicao\service\InstituicaoService.class
+com\plataformaapoio\instituicao\controller\InstituicaoController.class
+com\plataformaapoio\instituicao\repository\InstituicaoRepository.class
