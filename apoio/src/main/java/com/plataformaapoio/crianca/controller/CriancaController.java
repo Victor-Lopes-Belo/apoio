@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 @RestController
 @RequestMapping("/criancas")
 public class CriancaController {
@@ -18,7 +17,7 @@ public class CriancaController {
         this.criancaService = criancaService;
     }
 
-    @PostMapping("/instituicao/{instituicaoId}")
+    @PostMapping
     public ResponseEntity<Crianca> cadastrar(@PathVariable Long instituicaoId, @RequestBody Crianca crianca) {
         return ResponseEntity.ok(criancaService.salvar(instituicaoId, crianca));
     }
@@ -26,11 +25,6 @@ public class CriancaController {
     @GetMapping
     public ResponseEntity<List<Crianca>> listarTodas() {
         return ResponseEntity.ok(criancaService.listarTodas());
-    }
-
-    @GetMapping("/instituicao/{instituicaoId}")
-    public ResponseEntity<List<Crianca>> listarPorInstituicao(@PathVariable Long instituicaoId) {
-        return ResponseEntity.ok(criancaService.listarPorInstituicao(instituicaoId));
     }
 
     @GetMapping("/{id}")
