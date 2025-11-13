@@ -1,8 +1,9 @@
-package com.eventos.repository;
+package com.plataformaapoio.eventos.repository;
 
-import com.eventos.model.Evento;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.plataformaapoio.eventos.model.Evento;
 
 import java.time.LocalDate;
 import java.util.List;
