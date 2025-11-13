@@ -1,4 +1,4 @@
-package com.eventos.model;
+package com.plataformaapoio.eventos.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;

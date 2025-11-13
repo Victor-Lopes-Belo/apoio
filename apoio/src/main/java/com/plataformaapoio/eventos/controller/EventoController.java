@@ -1,9 +1,10 @@
-package com.eventos.controller;
+package com.plataformaapoio.eventos.controller;
 
-import com.eventos.model.Evento;
-import com.eventos.service.EventoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import com.plataformaapoio.eventos.model.Evento;
+import com.plataformaapoio.eventos.service.EventoService;
 
 import java.time.LocalDate;
 import java.util.List;

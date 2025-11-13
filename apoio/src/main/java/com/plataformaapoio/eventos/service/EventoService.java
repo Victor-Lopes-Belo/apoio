@@ -1,8 +1,10 @@
-package com.eventos.service;
+package com.plataformaapoio.eventos.service;
 
-import com.eventos.model.Evento;
-import com.eventos.repository.EventoRepository;
 import org.springframework.stereotype.Service;
+
+import com.plataformaapoio.eventos.model.Evento;
+import com.plataformaapoio.eventos.repository.EventoRepository;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
