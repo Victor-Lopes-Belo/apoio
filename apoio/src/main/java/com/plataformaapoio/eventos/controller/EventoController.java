@@ -23,7 +23,7 @@ public class EventoController {
     // criar: recebe evento no body e localId como request param
     @PostMapping
     public ResponseEntity<Evento> criar(@RequestBody Evento evento,
-                                        @RequestParam("localId") Long localId) {
+            @RequestParam("localId") Long localId) {
         return ResponseEntity.ok(service.salvar(evento, localId));
     }
 
@@ -39,8 +39,8 @@ public class EventoController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Evento> atualizar(@PathVariable Long id,
-                                            @RequestBody Evento evento,
-                                            @RequestParam(value = "localId", required = false) Long localId) {
+            @RequestBody Evento evento,
+            @RequestParam(value = "localId", required = false) Long localId) {
         return ResponseEntity.ok(service.atualizar(id, evento, localId));
     }
 
