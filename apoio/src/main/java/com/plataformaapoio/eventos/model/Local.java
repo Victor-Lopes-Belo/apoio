@@ -1,6 +1,7 @@
 package com.plataformaapoio.eventos.model;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import java.util.List;
 
 @Entity
@@ -15,8 +16,8 @@ public class Local {
     private String endereco;
     private String cidade;
 
-    // relacionamento 1:N (opcional para navegação reversa)
     @OneToMany(mappedBy = "local", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonBackReference
     private List<Evento> eventos;
 
     public Local() {}
@@ -27,7 +28,7 @@ public class Local {
         this.cidade = cidade;
     }
 
-    // getters/setters
+    // getters e setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

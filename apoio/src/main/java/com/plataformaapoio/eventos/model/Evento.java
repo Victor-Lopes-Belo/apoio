@@ -1,8 +1,11 @@
 package com.plataformaapoio.eventos.model;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
+import java.util.Set;
+import java.util.HashSet;
 
 @Entity
 @Table(name = "eventos")
@@ -19,10 +22,14 @@ public class Evento {
 
     private String descricao;
 
-    // muitos eventos para um local (N:1)
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "local_id", nullable = false)
+    @JsonManagedReference
     private Local local;
+
+    @ManyToMany
+    @JsonManagedReference
+    private Set<Convidado> convidados = new HashSet<>();
 
     public Evento() {
     }
@@ -34,7 +41,7 @@ public class Evento {
         this.local = local;
     }
 
-    // getters/setters
+    // getters e setters
     public Long getId() {
         return id;
     }
@@ -73,5 +80,13 @@ public class Evento {
 
     public void setLocal(Local local) {
         this.local = local;
+    }
+
+    public Set<Convidado> getConvidados() {
+        return convidados;
+    }
+
+    public void setConvidados(Set<Convidado> convidados) {
+        this.convidados = convidados;
     }
 }

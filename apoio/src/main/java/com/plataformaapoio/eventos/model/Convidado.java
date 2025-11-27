@@ -1,6 +1,7 @@
 package com.plataformaapoio.eventos.model;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,22 +17,46 @@ public class Convidado {
     private String email;
 
     @ManyToMany(mappedBy = "convidados")
+    @JsonBackReference
     private Set<Evento> eventos = new HashSet<>();
 
-    public Convidado() {}
+    public Convidado() {
+    }
 
     public Convidado(String nome, String email) {
         this.nome = nome;
         this.email = email;
     }
 
-    public Long getId() { return id; }
-    public String getNome() { return nome; }
-    public String getEmail() { return email; }
-    public Set<Evento> getEventos() { return eventos; }
+    public Long getId() {
+        return id;
+    }
 
-    public void setId(Long id) { this.id = id; }
-    public void setNome(String nome) { this.nome = nome; }
-    public void setEmail(String email) { this.email = email; }
-    public void setEventos(Set<Evento> eventos) { this.eventos = eventos; }
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Set<Evento> getEventos() {
+        return eventos;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setEventos(Set<Evento> eventos) {
+        this.eventos = eventos;
+    }
 }
