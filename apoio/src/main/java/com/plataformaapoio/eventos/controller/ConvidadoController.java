@@ -28,7 +28,7 @@ public class ConvidadoController {
     @ApiResponses({
             @ApiResponse(responseCode = "201", description = "Convidado criado com sucesso")
     })
-    @PostMapping
+    @PostMapping(consumes = {"application/json", "application/json;charset=UTF-8"})
     public ResponseEntity<Convidado> criar(@RequestBody Convidado convidado) {
         Convidado novo = service.salvar(convidado);
         return ResponseEntity.created(URI.create("/convidados/" + novo.getId())).body(novo);
@@ -60,7 +60,7 @@ public class ConvidadoController {
             @ApiResponse(responseCode = "200", description = "Convidado atualizado"),
             @ApiResponse(responseCode = "404", description = "Convidado não encontrado")
     })
-    @PutMapping("/{id}")
+    @PutMapping(value = "/{id}", consumes = {"application/json", "application/json;charset=UTF-8"})
     public ResponseEntity<Convidado> atualizar(@PathVariable Long id, @RequestBody Convidado convidado) {
         return service.atualizar(id, convidado)
                 .map(ResponseEntity::ok)

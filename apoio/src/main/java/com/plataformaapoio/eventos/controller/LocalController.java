@@ -7,7 +7,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,7 +28,7 @@ public class LocalController {
             @ApiResponse(responseCode = "201", description = "Local criado com sucesso"),
             @ApiResponse(responseCode = "400", description = "Requisição inválida")
     })
-    @PostMapping
+    @PostMapping(consumes = { "application/json", "application/json;charset=UTF-8" })
     public ResponseEntity<Local> criar(@RequestBody Local local) {
         Local novo = service.salvar(local);
         return ResponseEntity.created(URI.create("/locais/" + novo.getId())).body(novo);
@@ -61,7 +60,7 @@ public class LocalController {
             @ApiResponse(responseCode = "200", description = "Local atualizado"),
             @ApiResponse(responseCode = "404", description = "Local não encontrado")
     })
-    @PutMapping("/{id}")
+    @PutMapping(value = "/{id}", consumes = { "application/json", "application/json;charset=UTF-8" })
     public ResponseEntity<Local> atualizar(@PathVariable Long id, @RequestBody Local local) {
         return service.atualizar(id, local)
                 .map(ResponseEntity::ok)

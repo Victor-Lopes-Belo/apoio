@@ -1,14 +1,16 @@
 package com.plataformaapoio.eventos.model;
 
 import jakarta.persistence.*;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import java.time.LocalDate;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "eventos")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Evento {
 
     @Id
@@ -24,12 +26,10 @@ public class Evento {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "local_id", nullable = false)
-    @JsonManagedReference
     private Local local;
 
     @ManyToMany
     @JoinTable(name = "evento_convidado", joinColumns = @JoinColumn(name = "evento_id"), inverseJoinColumns = @JoinColumn(name = "convidado_id"))
-    @JsonManagedReference
     private Set<Convidado> convidados = new HashSet<>();
 
     public Evento() {
@@ -42,7 +42,8 @@ public class Evento {
         this.local = local;
     }
 
-    // getters e setters
+    // GETTERS E SETTERS
+
     public Long getId() {
         return id;
     }
