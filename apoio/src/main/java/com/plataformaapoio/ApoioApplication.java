@@ -1,4 +1,4 @@
-package com.plataformadeeventos;
+package com.plataformaapoio;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
