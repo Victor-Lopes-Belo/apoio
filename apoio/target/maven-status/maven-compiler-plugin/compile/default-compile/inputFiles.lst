@@ -1,4 +1,5 @@
 C:\Users\victo\Downloads\apoio\apoio\apoio\src\main\java\com\plataformaapoio\ApoioApplication.java
+C:\Users\victo\Downloads\apoio\apoio\apoio\src\main\java\com\plataformaapoio\eventos\controller\ConvidadoController.java
 C:\Users\victo\Downloads\apoio\apoio\apoio\src\main\java\com\plataformaapoio\eventos\controller\EventoController.java
 C:\Users\victo\Downloads\apoio\apoio\apoio\src\main\java\com\plataformaapoio\eventos\controller\LocalController.java
 C:\Users\victo\Downloads\apoio\apoio\apoio\src\main\java\com\plataformaapoio\eventos\model\Convidado.java
@@ -7,5 +8,6 @@ C:\Users\victo\Downloads\apoio\apoio\apoio\src\main\java\com\plataformaapoio\eve
 C:\Users\victo\Downloads\apoio\apoio\apoio\src\main\java\com\plataformaapoio\eventos\repository\ConvidadoRepository.java
 C:\Users\victo\Downloads\apoio\apoio\apoio\src\main\java\com\plataformaapoio\eventos\repository\EventoRepository.java
 C:\Users\victo\Downloads\apoio\apoio\apoio\src\main\java\com\plataformaapoio\eventos\repository\LocalRepository.java
+C:\Users\victo\Downloads\apoio\apoio\apoio\src\main\java\com\plataformaapoio\eventos\service\ConvidadoService.java
 C:\Users\victo\Downloads\apoio\apoio\apoio\src\main\java\com\plataformaapoio\eventos\service\EventoService.java
 C:\Users\victo\Downloads\apoio\apoio\apoio\src\main\java\com\plataformaapoio\eventos\service\LocalService.java

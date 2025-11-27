@@ -28,6 +28,7 @@ public class Evento {
     private Local local;
 
     @ManyToMany
+    @JoinTable(name = "evento_convidado", joinColumns = @JoinColumn(name = "evento_id"), inverseJoinColumns = @JoinColumn(name = "convidado_id"))
     @JsonManagedReference
     private Set<Convidado> convidados = new HashSet<>();
 
