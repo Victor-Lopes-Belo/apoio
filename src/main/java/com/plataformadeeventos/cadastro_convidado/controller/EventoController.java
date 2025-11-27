@@ -30,5 +30,13 @@ public class EventoController {
     public Evento buscar(@PathVariable Long id) {
         return eventoService.buscarPorId(id);
     }
-}
 
+    @PostMapping("/{eventoId}/convidados/{convidadoId}")
+    public Evento adicionarConvidado(
+            @PathVariable Long eventoId,
+            @PathVariable Long convidadoId
+    ) {
+        return eventoService.adicionarConvidado(eventoId, convidadoId);
+    }
+
+}

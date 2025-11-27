@@ -1,5 +1,7 @@
 package com.plataformadeeventos.cadastro_convidado.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -10,6 +12,10 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id"
+)
 public class Evento {
 
     @Id
@@ -20,7 +26,14 @@ public class Evento {
 
     private String local;
 
-    @ManyToMany(mappedBy = "eventos")
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "evento_convidado",
+            joinColumns = @JoinColumn(name = "evento_id"),
+            inverseJoinColumns = @JoinColumn(name = "convidado_id")
+    )
     private Set<Convidado> convidados = new HashSet<>();
-}
 
+
+
+}
